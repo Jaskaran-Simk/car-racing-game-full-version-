@@ -31,7 +31,7 @@ class Player {
        var PlayersRef = database.ref("players")
        PlayersRef.on("value",function(data){
            allPlayers = data.val()
-           console.log(allPlayers)
+           //console.log(allPlayers)
        })
        
        
