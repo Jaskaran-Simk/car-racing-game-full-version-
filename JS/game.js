@@ -41,6 +41,8 @@ start(){
 play(){
     form.hideGreeting()
     Player.getPlayerInfo()
+    player.getRank()
+    
     if(allPlayers !== undefined ){
         background(groundImg)
         image(trackImg,75, -windowHeight*6  ,windowWidth - 200,windowHeight*7)
@@ -68,12 +70,18 @@ play(){
 
     if(player.distance > 4200){
         gameState = 2
+        player.rank = rank +1
+        player.updateRank(player.rank)
+        
     }
 
     drawSprites();
 }
 end(){
-console.log("game End")
+console.log(player.rank)
+var playerRank = createElement("h2")
+    playerRank.html("Rank: "+ player.rank )
+    playerRank.position(windowWidth/3 - 50,50)
 
 }
 }
